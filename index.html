@@ -5,18 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href="https://rawgit.com/kenwheeler/slick/master/slick/slick-theme.css" rel="stylesheet" />
+    <link href="https://rawgit.com/kenwheeler/slick/master/slick/slick.css" rel="stylesheet" />
 
-    <title>Cook</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"
+        integrity="sha384-7WBfQYubrFpye+dGHEeA3fHaTy/wpTFhxdjxqvK04e4orV3z+X4XC4qOX3qnkVC6"
+        crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/kenwheeler/slick/master/slick/slick.js"></script>
+    <script src="index.js"></script>
+
+    <title>Cooking</title>
 </head>
 
 <body>
     <header class="header">
         <div class="container">
             <div class="inner-header">
-                <div class="logo">Cooking</div>
+                <a href="index.html" class="text-decoration-none"><div class="logo">Cooking</div></a>                
                 <nav>
                     <a class="nav_link" href="">About</a>
                     <a class="nav_link" href="">Service</a>
@@ -27,12 +38,115 @@
             </div>
         </div>
     </header>
-    <div class="slider-block">
-        <div class="container">
-            <h1> Welcome to Cooking page</h1>
+    <div class="sliderContainer">
+        <div class="slider single-item w-100">
+            <div class="slider-block slide1">
+                <div class="container">
+                    <div class="slider-heading">
+                        <h2>Creative template</h2>
+                        <h1> Welcome to Cooking</h1>
+                        <hr>
+                        <button>Learn more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-block slide2">
+                <div class="container">
+                    <div class="slider-heading">
+                        <h2>Cook and enjoy !</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slider-block slide3">
+                <div class="container">
+                    <div class="slider-heading">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="progressBarContainer">
+            <div class="bar-block">
+                <div class="slider-page">
+                    <h5>Intro</h5>
+                    <span data-slick-index="0" class="progressBar"></span>
+                </div>
+                <div class="slider-page">
+                    <h5>Work</h5>
+                    <span data-slick-index="1" class="progressBar"></span>
+                </div>
+                <div class="slider-page">
+                        <h5>About</h5>
+                    <span data-slick-index="2" class="progressBar"></span>
+                </div> 
+            </div>
+           
         </div>
     </div>
-    
+
+    <script>
+        $(".slider").slick({
+            infinite: true,
+            arrows: false,
+            dots: false,
+            autoplay: false,
+            speed: 800,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+        var percentTime;
+        var tick;
+        var time = 1;
+        var progressBarIndex = 0;
+
+        $('.progressBarContainer .progressBar').each(function (index) {
+            var progress = "<div class='inProgress inProgress" + index + "'></div>";
+            $(this).html(progress);
+        });
+
+        function startProgressbar() {
+            resetProgressbar();
+            percentTime = 0;
+            tick = setInterval(interval, 10);
+        }
+
+        function interval() {
+            if (($('.slider .slick-track div[data-slick-index="' + progressBarIndex + '"]').attr("aria-hidden")) === "true") {
+                progressBarIndex = $('.slider .slick-track div[aria-hidden="false"]').data("slickIndex");
+                startProgressbar();
+            } else {
+                percentTime += 1 / (time + 5);
+                $('.inProgress' + progressBarIndex).css({
+                    width: percentTime + "%"
+                });
+                if (percentTime >= 100) {
+                    $('.single-item').slick('slickNext');
+                    progressBarIndex++;
+                    if (progressBarIndex > 2) {
+                        progressBarIndex = 0;
+                    }
+                    startProgressbar();
+                }
+            }
+        }
+
+        function resetProgressbar() {
+            $('.inProgress').css({
+                width: 0 + '%'
+            });
+            clearInterval(tick);
+        }
+        startProgressbar();
+        // End ticking machine
+
+        $('.progressBarContainer div').click(function () {
+            clearInterval(tick);
+            var goToThisIndex = $(this).find("span").data("slickIndex");
+            $('.single-item').slick('slickGoTo', goToThisIndex, false);
+            startProgressbar();
+        });
+    </script>
 </body>
 
 </html>
