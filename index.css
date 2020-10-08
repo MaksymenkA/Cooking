@@ -66,12 +66,6 @@ nav {
   justify-content: center;
   text-align: center;
 }
-
-/* .slider-heading1,.slider-heading1  {
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-} */
 .slider-heading h1 {
   font-size: 100px;
   text-transform: uppercase;
@@ -117,7 +111,7 @@ nav {
 .slide3 {
   background: linear-gradient(
       to bottom,
-      rgba(255, 109, 41, 0.877),
+      rgba(255, 113, 30, 0.877),
       rgba(148, 0, 0, 0)
     ),
     url("images/slide3.jpg") center no-repeat;
@@ -176,7 +170,114 @@ nav {
   width: 0%;
   height: 4px;
 }
+
 .progressBarContainer h5 {
   text-align: center;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+/* About */
+
+.about {
+  padding: 100px 0px;
+}
+.about h5, .service h5 {
+  font-family: "Kaushan Script", cursive;
+}
+
+.about hr , .service hr{
+  background: rgba(148, 0, 0, 0.658);
+  height: 3px;
+  width: 50px;
+}
+.about .gallery {
+  margin-top: 25px;
+}
+.about .gallery img {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.1s linear;
+}
+.about .gallery img:hover {
+  opacity: 0.25;
+}
+
+.about .about-img {
+  background: linear-gradient(to bottom, #e25909, #fcc500);
+  transition: transform 0.1s linear;
+}
+.about .about-img:hover {
+  transform: translate3d(-10px, -10px, 0);
+}
+.about-item {
+  margin: 25px;
+  background-color: rgba(241, 123, 54, 0.877);
+  position: relative;
+}
+.about-item:hover .about-text{
+  opacity: 1;
+}
+
+.about-text{
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  text-align: center;
+  transform:translate3d(0,-50%,0) ;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+/* Statistic */
+.statistic div{
+  justify-content: space-around;
+  text-align: center;
+  padding: 10px;
+}
+.statistic div h5{
+  text-transform: uppercase;
   font-size: 15px;
 }
+.statistic div h1{
+  font-size: 50px;
+}
+.statistic{
+  padding: 75px;
+  color: white;
+  margin-bottom:50px ;
+
+  background: linear-gradient(to bottom, #e25909, #fcc500);
+}
+.statistic row{
+  margin: 0;
+}
+@media screen and (max-width:845px){
+  .statistic div{
+    flex: 0 0 50%;
+    max-width: 100%;
+    }
+}
+
+/* Services */
+
+.service-list i{
+font-size: 50px;
+color:#e25909 ;
+padding-right: 25px;
+}
+
+.service-list{
+text-align: left;
+display: flex;
+flex-wrap: wrap;
+}
+.service-item{
+  margin: 25px auto;
+} 
