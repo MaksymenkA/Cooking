@@ -182,11 +182,21 @@ nav {
 .about {
   padding: 100px 0px;
 }
-.about h5, .service h5 {
+.about h5,
+.service h5,
+.design h5,
+.expanded-service h5,
+.team h5,
+.dishes h5 {
   font-family: "Kaushan Script", cursive;
 }
 
-.about hr , .service hr{
+.about hr,
+.service hr,
+.design hr,
+.expanded-service hr,
+.team hr,
+.dishes hr{
   background: rgba(148, 0, 0, 0.658);
   height: 3px;
   width: 50px;
@@ -216,11 +226,11 @@ nav {
   background-color: rgba(241, 123, 54, 0.877);
   position: relative;
 }
-.about-item:hover .about-text{
+.about-item:hover .about-text {
   opacity: 1;
 }
 
-.about-text{
+.about-text {
   text-transform: uppercase;
   color: white;
   font-weight: 700;
@@ -229,55 +239,203 @@ nav {
   left: 0;
   z-index: 2;
   text-align: center;
-  transform:translate3d(0,-50%,0) ;
+  transform: translate3d(0, -50%, 0);
   width: 100%;
   opacity: 0;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
 }
 
 /* Statistic */
-.statistic div{
+.statistic div {
   justify-content: space-around;
   text-align: center;
   padding: 10px;
 }
-.statistic div h5{
+.statistic div h5 {
   text-transform: uppercase;
   font-size: 15px;
 }
-.statistic div h1{
+.statistic div h1 {
   font-size: 50px;
 }
-.statistic{
+.statistic {
   padding: 75px;
   color: white;
-  margin-bottom:50px ;
+  margin-bottom: 50px;
 
   background: linear-gradient(to bottom, #e25909, #fcc500);
 }
-.statistic row{
-  margin: 0;
+.statistic .row {
+  margin: 0 !important;
 }
-@media screen and (max-width:845px){
-  .statistic div{
+@media screen and (max-width: 845px) {
+  .statistic div {
     flex: 0 0 50%;
     max-width: 100%;
-    }
+  }
 }
 
 /* Services */
 
-.service-list i{
-font-size: 50px;
-color:#e25909 ;
-padding-right: 25px;
+.service-list i {
+  font-size: 50px;
+  color: #e25909;
+  padding-right: 25px;
 }
 
-.service-list{
-text-align: left;
-display: flex;
-flex-wrap: wrap;
+.service-list {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
 }
-.service-item{
+.service-item {
   margin: 25px auto;
-} 
+}
+
+/* Design */
+.design {
+  margin: 50px 0 80px;
+  padding: 50px 0 0;
+  background: url(images/design.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+.design .tablet {
+  width: 50%;
+  height: auto;
+  margin-top: 35px;
+}
+.design .phone {
+  width: 15%;
+  position: absolute;
+  bottom: -60px;
+  right: 30%;
+  left: 55%;
+  box-shadow: 0px 10px 8px -10px #111;
+  border-radius: 35px;
+}
+@media screen and (max-width: 845px) {
+  .design .tablet {
+    width: 70%;
+  }
+  .design .phone {
+    width: 22%;
+    border-radius: 22px;
+  }
+}
+
+/* Expanded-service */
+.expanded-service {
+  margin: 120px 0 60px;
+}
+.services {
+  margin: 30px;
+}
+.services img {
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+/* Accordion */
+.main-flx {
+  width: 100%;
+}
+details summary::-webkit-details-marker {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 90%;
+  right: 10%;
+  font-size: 30px;
+  color: black;
+}
+
+summary {
+  outline: none;
+  color: #1a205c;
+  padding-left: 10px;
+  box-shadow: 0 0 2px rgb(240, 131, 7);
+  position: relative;
+  border: 1px solid rgba(241, 123, 54, 0.877);
+}
+
+.main-card {
+  padding: 10px;
+  border: 1px solid rgb(240, 131, 7);
+  box-shadow: 0 0 2px rgb(240, 131, 7);
+}
+.title {
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: "Kaushan Script", cursive;
+  font-size: 20px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.title i {
+  font-size: 30px;
+  color: rgb(240, 131, 7);
+  padding: 15px;
+}
+
+@media only screen and (max-width: 950px) {
+  .services {
+    flex-direction: column;
+  }
+  .services img {
+    width: 80%;
+    margin: auto;
+  }
+  .main-flx {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .main-flx {
+    width: 100%;
+    display: block !important;
+  }
+  .title h3 {
+    font-size: 20px;
+  }
+}
+
+/* Team */
+.team img {
+  width: 300px;
+  object-fit: cover;
+  height: 450px;
+}
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px 0 40px;
+}
+@media only screen and (max-width: 767px) {
+  .team img {
+    height: 375px;
+  }
+}
+
+/* Brands */
+.brands img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+.brands {
+  padding: 50px;
+  background-color: whitesmoke;
+  margin-bottom: 100px;
+  justify-content: center;
+  flex: 1 1 0;
+}
