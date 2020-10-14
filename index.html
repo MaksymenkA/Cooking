@@ -5,46 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
     <link href="https://rawgit.com/kenwheeler/slick/master/slick/slick-theme.css" rel="stylesheet" />
     <link href="https://rawgit.com/kenwheeler/slick/master/slick/slick.css" rel="stylesheet" />
-
     <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"
         integrity="sha384-7WBfQYubrFpye+dGHEeA3fHaTy/wpTFhxdjxqvK04e4orV3z+X4XC4qOX3qnkVC6"
         crossorigin="anonymous"></script>
     <script src="https://rawgit.com/kenwheeler/slick/master/slick/slick.js"></script>
-    <script src="index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
-        integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"
-        integrity="sha512-+/4Q+xH9jXbMNJzNt2eMrYv/Zs2rzr4Bu2thfvzlshZBvH1g+VGP55W8b6xfku0c0KknE7qlbBPhDPrHFbgK4g=="
-        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/430e53cfcb.js" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var $j = jQuery.noConflict(true);       
+    </script>
+    <script src="index.js"></script>
     <title>Cooking</title>
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header fixed-top ">
         <div class="container">
-            <div class="inner-header">
-                <a href="index.html" class="text-decoration-none">
+            <div class="inner-header ">
+                <a href="" data-scroll=".sliderContainer" class="text-decoration-none">
                     <div class="logo">Cooking</div>
                 </a>
-                <nav>
-                    <a class="nav_link" href="">About</a>
-                    <a class="nav_link" href="">Service</a>
-                    <a class="nav_link" href="">Blog</a>
-                    <a class="nav_link" href="">Work</a>
-                    <a class="nav_link" href="">Contacts</a>
+                <nav class="nav">
+                    <a class="nav_link" href="" data-scroll=".about">About</a>
+                    <a class="nav_link" href="" data-scroll=".service">Service</a>
+                    <a class="nav_link" href="" data-scroll=".dishes">Work</a>
+                    <a class="nav_link" href="" data-scroll=".reviews">Reviews</a>
+                    <a class="nav_link" href="" data-scroll=".contacts">Contacts</a>
                 </nav>
+                <div class="nav-toggle ">
+                    <span class="nav-toggle-item"></span>
+                </div>
             </div>
         </div>
     </header>
@@ -150,7 +151,7 @@
 
     <!-- Service -->
 
-    <section class="service">
+    <section class="service ">
         <div class="container text-center">
             <h5>We work with</h5>
             <h3 class="text-uppercase">Amazing Services</h3>
@@ -278,10 +279,10 @@
                         </div>
                     </details>
                 </div>
-            </div>
+        </div>
         </div>
     </section>
-<!-- Team -->
+    <!-- Team -->
     <section class="team">
         <div class="container text-center">
             <h5>Who we are</h5>
@@ -289,110 +290,158 @@
             <hr>
             <p style="max-width: 900px;" class="text-center m-auto">Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <div class="team-members">
-                    <div style="margin: 30px 0;">
-                        <img src="images/chef1.jpg" alt="">
-                        <h5 style="margin-top: 15px;">Eric Cocollos</h5>
-                    </div>
-                    <div style="margin: 30px 0;">
-                        <img src="images/chef2.jpg" alt="">
-                        <h5 style="margin-top: 15px;">Clare Smyth</h5>
-                    </div>
-                    <div style="margin: 30px 0;">
-                        <img src="images/chef3.jpg" alt="">
-                        <h5 style="margin-top: 15px;">Darren McGrady</h5>
-                    </div>
+            <div class="team-members">
+                <div style="margin: 30px 0;">
+                    <img src="images/chef1.jpg" alt="">
+                    <h5 style="margin-top: 15px;">Eric Cocollos</h5>
                 </div>
+                <div style="margin: 30px 0;">
+                    <img src="images/chef2.jpg" alt="">
+                    <h5 style="margin-top: 15px;">Clare Smyth</h5>
+                </div>
+                <div style="margin: 30px 0;">
+                    <img src="images/chef3.jpg" alt="">
+                    <h5 style="margin-top: 15px;">Darren McGrady</h5>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="brands d-flex">
-        <div class="w-75 justify-content-around d-flex" style="flex-wrap: wrap;">
+        <div class="justify-content-around d-flex" style="flex-wrap: wrap;">
             <img src="images/cheval-blanc-brewery-logo.svg" alt="">
             <img src="images/fatduck2-1.png" alt="">
             <img src="images/logo.png" alt="">
             <img src="images/cheval-blanc-brewery-logo.svg" alt="">
             <img src="images/fatduck2-1.png" alt="">
             <img src="images/logo.png" alt="">
-        </div>           
+        </div>
     </section>
 
     <!-- Dishes -->
     <section class="dishes">
-        <div class="container text-center">
+        <div class="container-fluid text-center">
             <h5>What we do </h5>
             <h3 class="text-uppercase">Some of our work</h3>
             <hr>
             <p style="max-width: 900px;" class="text-center m-auto">Lorem Ipsum is simply dummy text of the printing and
                 typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+
+        </div>
+        <div class="gallery" id="gallery">
+
+            <div class="mb-3 ">
+                <img src="images/dish1.jpg" alt="">
+            </div>
+            <div class="mb-3 ">
+                <img src="images/dish2.jpg" alt="">
+            </div>
+            <div class="mb-3">
+                <img src="images/dish3.jpg" alt="">
+            </div>
+            <div class="mb-3 ">
+                <img src="images/dish5.jpg" alt="">
+            </div>
+            <div class="mb-3 ">
+                <img src="images/dish6.jpg" alt="">
+            </div>
+            <div class="mb-3 ">
+                <img src="images/dish4.jpg" alt="">
+            </div>
         </div>
     </section>
-    <script type="text/javascript">
-        $(".num").counterUp({ delay: 10, time: 1000 });
-    </script>
 
-    <script>
-        $(".slider").slick({
-            infinite: true,
-            arrows: false,
-            dots: false,
-            autoplay: false,
-            speed: 800,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        });
-        var percentTime;
-        var tick;
-        var time = 1;
-        var progressBarIndex = 0;
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container-fluid text-center">
+            <h5>Happy clients</h5>
+            <h3 class="text-uppercase">What people say</h3>
+            <hr>
+            <div class="row text-left justify-content-center">
+                <div class="review-block  col-sm-8 col-lg-5 col-md-5">
+                    <img src="images/review1.jpg" alt="">
+                    <div class="review-text">
+                        <h3>James Smith</h3>
+                        <h6>Reviewer</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s</p>
+                    </div>
+                </div>
+                <div class="review-block  col-sm-8 col-lg-5 col-md-5">
+                    <img src="images/review2.jpg" alt="">
+                    <div class="review-text">
+                        <h3>Diana Robinson</h3>
+                        <h6>Reviewer</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s</p>
+                    </div>
+                </div>
+                <div class="review-block  col-sm-8 col-lg-5 col-md-5">
+                    <img src="images/review3.jpg" alt="">
+                    <div class="review-text">
+                        <h3>Jill Peterson</h3>
+                        <h6>Reviewer</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s</p>
+                    </div>
+                </div>
+                <div class="review-block  col-sm-8 col-lg-5 col-md-5">
+                    <img src="images/review4.jpg" alt="">
+                    <div class="review-text">
+                        <h3>Peter McMillan</h3>
+                        <h6>Guest</h6>
+                        <p>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s</p>
+                    </div>
+                </div>
+            </div>
 
-        $('.progressBarContainer .progressBar').each(function (index) {
-            var progress = "<div class='inProgress inProgress" + index + "'></div>";
-            $(this).html(progress);
-        });
 
-        function startProgressbar() {
-            resetProgressbar();
-            percentTime = 0;
-            tick = setInterval(interval, 10);
-        }
+        </div>
+    </section>
 
-        function interval() {
-            if (($('.slider .slick-track div[data-slick-index="' + progressBarIndex + '"]').attr("aria-hidden")) === "true") {
-                progressBarIndex = $('.slider .slick-track div[aria-hidden="false"]').data("slickIndex");
-                startProgressbar();
-            } else {
-                percentTime += 1 / (time + 5);
-                $('.inProgress' + progressBarIndex).css({
-                    width: percentTime + "%"
-                });
-                if (percentTime >= 100) {
-                    $('.single-item').slick('slickNext');
-                    progressBarIndex++;
-                    if (progressBarIndex > 2) {
-                        progressBarIndex = 0;
-                    }
-                    startProgressbar();
-                }
-            }
-        }
 
-        function resetProgressbar() {
-            $('.inProgress').css({
-                width: 0 + '%'
-            });
-            clearInterval(tick);
-        }
-        startProgressbar();
-        // End ticking machine
+    <footer class="d-flex contacts">
+        <div class="col-lg-5 col-md-5 col-sm-8 follow-block">
+            <h3>Cooking</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil similique, suscipit soluta nulla tempore
+                cumque quo modi quia! Animi provident optio aperiam, sit error sunt beatae perspiciatis rem fuga
+                laudantium!</p>
+            <hr>
+            <div class="d-flex mb-2">
+                <h6 class="">Follow in:</h6>
+                <div class="icons ml-3">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Email">
+                <button>Subscribe</button> </form>
 
-        $('.progressBarContainer div').click(function () {
-            clearInterval(tick);
-            var goToThisIndex = $(this).find("span").data("slickIndex");
-            $('.single-item').slick('slickGoTo', goToThisIndex, false);
-            startProgressbar();
-        });
-    </script>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-8 insta-block">
+            <h3>Instagram</h3>
+            <div class="instagram-photo">
+                <img src="images/dish1.jpg" alt="">
+                <img src="images/dish2.jpg" alt="">
+                <img src="images/dish3.jpg" alt="">
+                <img src="images/dish4.jpg" alt="">
+                <img src="images/dish5.jpg" alt="">
+                <img src="images/dish6.jpg" alt="">
+                <img src="images/dish7.jpg" alt="">
+                <img src="images/dish8.jpg" alt="">
+                <img src="images/dish9.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
